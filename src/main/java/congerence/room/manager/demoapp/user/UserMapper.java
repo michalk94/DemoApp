@@ -11,5 +11,14 @@ public class UserMapper {
         return dto;
     }
 
-    
+    static User toEntity(UserDto userDto) {
+        User entity = new User();
+        entity.setName(userDto.getName());
+        entity.setLastName(userDto.getLastName());
+        entity.setLogin(userDto.getLogin());
+        entity.setPassword(userDto.getPassword());
+        return entity;
+    }
+
+
 }
