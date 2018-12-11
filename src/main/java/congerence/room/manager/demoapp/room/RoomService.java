@@ -1,6 +1,7 @@
 package congerence.room.manager.demoapp.room;
 
 
+import congerence.room.manager.demoapp.exception.RoomNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,12 @@ public class RoomService {
         return RoomMapper.toDto(createRoom);
     }
 
-    RoomDto editRoom(RoomDto roomDto){
-        
+    RoomDto editRoom(RoomDto roomDto) {
+        Room dbRoom = roomRepository
+                .findById(roomDto.getRoomName())
+                .orElseThrow(() -> new RoomNotFoundException("Room" + roomDto.getRoomName()));
+        return mapAndSaveRoom(dbRoom, roomDto);
     }
+
+    
 }
