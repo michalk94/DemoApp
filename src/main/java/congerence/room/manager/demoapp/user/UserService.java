@@ -43,4 +43,8 @@ public class UserService {
         return UserMapper.toDto(savedUser);
     }
 
+    void deleteUser(String userId) {
+        userRepository.deleteById(userId);
+    }
+
 }
