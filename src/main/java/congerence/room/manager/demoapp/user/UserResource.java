@@ -38,4 +38,16 @@ public class UserResource {
         return ResponseEntity.created(location).body(savedUser);
 
     }
+
+    @PutMapping("/{login}")
+    public ResponseEntity<UserDto> update(@PathVariable String login, @RequestBody UserDto userDto){
+        UserDto updateUser = userService.editUser(userDto);
+        return ResponseEntity.ok(updateUser);
+    }
+
+    @DeleteMapping("/delete/{login}")
+    public ResponseEntity<UserDto> deleteUser(@PathVariable String login){
+        userService.deleteUser(login);
+        return ResponseEntity.ok().build();
+    }
 }
