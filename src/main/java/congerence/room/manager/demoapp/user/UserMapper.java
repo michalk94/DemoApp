@@ -20,5 +20,18 @@ public class UserMapper {
         return entity;
     }
 
+    static User toEntity(User dbUser, UserDto userDto){
+        if (userDto.getName() != null && !userDto.getName().trim().isEmpty()){
+            dbUser.setName(userDto.getName());
+        }
+        if (userDto.getLastName() != null && !userDto.getLastName().trim().isEmpty()){
+            dbUser.setLastName(userDto.getLastName());
+        }
+        if (userDto.getPassword() != null && !userDto.getPassword().trim().isEmpty()){
+            dbUser.setPassword(userDto.getPassword());
+        }
+        return dbUser;
+    }
+
 
 }
