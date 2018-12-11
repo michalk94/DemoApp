@@ -1,10 +1,13 @@
 package congerence.room.manager.demoapp.room;
 
 
+import congerence.room.manager.demoapp.booking.Booking;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Data
 @Entity
@@ -20,6 +23,9 @@ public class Room {
     private boolean projector;
 
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "room")
+    private List<Booking> bookings;
 
     public Room() {
     }

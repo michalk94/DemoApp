@@ -1,12 +1,11 @@
 package congerence.room.manager.demoapp.booking;
 
 
+import congerence.room.manager.demoapp.room.Room;
+import congerence.room.manager.demoapp.user.User;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -21,5 +20,14 @@ public class Booking {
 
     private Date end;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_login")
+    private User user;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "room_name")
+    private Room room;
+
+    public Booking() {
+    }
 }
