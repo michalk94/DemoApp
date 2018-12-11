@@ -11,7 +11,6 @@ Technologies:
 -Spring Boot
 -Spring Framework
 -Restful api
--Spring MVC
 -JPA
 -H2
 -Insomnia(for checking my requests)
