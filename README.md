@@ -19,7 +19,7 @@ Short description what this app can do:
 -Creating Users and Rooms(Editing, Deleteing them too)
 -Booking rooms for some period of time
 -Getting list of booked rooms(All of them, by User, via Room)
-Just simple manager. There are I can add more, but unfortunately, I was out of the time. Maybe next time!
+Just simple manager.
 
 Hope You like it :)
 Stay tuned!
